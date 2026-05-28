@@ -1,4 +1,3 @@
-
 ##############
 ### COLORS ###
 ##############
@@ -183,8 +182,8 @@ bind = $mainMod, E, exec, $fileManager
 bind = $mainMod, T, togglefloating,
 bind = $mainMod, SUPER_L, exec, $menu
 bind = $mainMod, P, pseudo, # dwindle
-bind = $mainMod, J, togglesplit, # Change between horizontal and vertical splits
-bind = $mainMod, K, swapsplit, # Swap the current split with the main one
+bind = $mainMod, J, layoutmsg, togglesplit 
+bind = $mainMod, K, layoutmsg, swapsplit
 bind = $mainMod+SHIFT, F, fullscreen
 bind = $mainMod, D, fullscreenstate, 1 # Toggle maximized
 
@@ -200,7 +199,7 @@ bind = $mainMod, SPACE, exec, /home/tallen/.config/hypr/scripts/fuzzel-code.sh
 bind = $mainMod, L, exec, hyprlock
 
 # Screenshots
-bind = $mainMod, S, exec, hyprshot -o $HOME/Pictures/Screenshots/ -m active --mode output --freeze
+bind = $mainMod, S, exec, hyprshot -o $HOME/Pictures/Screenshots/ -m active --freeze
 bind = $mainMod+SHIFT, S, exec, hyprshot -o $HOME/Pictures/Screenshots/ -m region --freeze
 bind = $mainMod+CONTROL, S, exec, hyprshot -o $HOME/Pictures/Screenshots/ -m window --freeze
 
@@ -342,13 +341,4 @@ windowrule {
   name = windowrule-10
   opacity = 1.0 override
   match:title = .*YouTube.*
-}
-
-# Layer shell rules
-layerrule {
-  name = layerrule-1
-  blur = on
-  # no_anim = on
-  ignore_alpha = 0.5
-  match:namespace = tallens-gtk-shell
 }

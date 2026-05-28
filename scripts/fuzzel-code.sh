@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
-CODE_DIR="$HOME/Code"
+PROJECTS_DIR="$HOME/Projects"
 
 TERMINAL="ghostty" 
 
-if [ ! -d "$CODE_DIR" ]; then
-    notify-send "Error" "Directory $CODE_DIR does not exist."
+if [ ! -d "$PROJECTS_DIR" ]; then
+    notify-send "Error" "Directory $PROJECTS_DIR does not exist."
     exit 1
 fi
 
-SELECTED_PROJECT=$(ls -1 "$CODE_DIR" | fuzzel --dmenu -p "  " --placeholder="Search Projects" --width 40)
+SELECTED_PROJECT=$(ls -1 "$PROJECTS_DIR" | fuzzel --dmenu -p "  " --placeholder="Search Projects" --width 40)
 
 if [ $? -eq 0 ] && [ -n "$SELECTED_PROJECT" ]; then
     
-    FULL_PATH="$CODE_DIR/$SELECTED_PROJECT"
+    FULL_PATH="$PROJECTS_DIR/$SELECTED_PROJECT"
 
     if [ -z "$TERMINAL" ]; then
         nvim "$FULL_PATH"
