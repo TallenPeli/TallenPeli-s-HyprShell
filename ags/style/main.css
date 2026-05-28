@@ -1,0 +1,625 @@
+@import "colors.css";
+* {
+  transition: background-color 0.2s ease-in;
+}
+
+button {
+  background-color: color-mix(in srgb, @surface_container_highest 100%, transparent);
+  color: @on_background;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+check {
+  background-color: @primary;
+  color: @on_primary;
+}
+
+scale > trough {
+  background-color: @surface_container_high;
+  border-radius: 4px;
+}
+
+scale > trough > highlight {
+  padding: 7px;
+  border-radius: 2px;
+  background-color: @primary;
+}
+
+scale > trough > slider {
+  min-width: 4px;
+  border-radius: 5px;
+  background-color: @primary;
+  outline: 5px solid @background;
+  outline-offset: 0px;
+  margin: -15px 0px;
+}
+
+.image-container {
+  border-radius: 50%;
+  border: none;
+}
+
+.sub-text {
+  font-size: 10px;
+}
+
+.dim-text {
+  color: color-mix(in srgb, @on_surface 70%, @surface);
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.slider-button {
+  color: @on_background;
+  background-color: transparent;
+}
+
+.hover-button {
+  border-radius: 25px;
+}
+
+.hover-button:hover {
+  background-color: @primary;
+  border-radius: 20px;
+  color: @on_primary;
+}
+
+.quick-settings {
+  background-color: color-mix(in srgb, @background 100%, transparent);
+  border: 1px solid @outline_variant;
+  padding: 15px;
+  border-radius: 40px;
+}
+.quick-settings * {
+  transition: background-color 0.2s ease-in-out, border-radius 0.2s cubic-bezier(0.5, -1, 0.5, 2);
+}
+.quick-settings .header-button {
+  background-color: @surface_container_high;
+  color: @on_background;
+}
+.quick-settings .header-button:hover {
+  background-color: @surface_variant;
+}
+.quick-settings flowboxchild {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 40px;
+  padding: 0px;
+}
+.quick-settings .quick-toggle {
+  border-radius: 40px;
+  font-size: 16px;
+  background-color: color-mix(in srgb, @surface_container 100%, transparent);
+  padding: 6px;
+  min-width: 180px;
+}
+.quick-settings .quick-toggle .dropdown-button {
+  margin: 0px;
+  padding: 0px;
+  color: @on_surface_container_high;
+  background-color: transparent;
+}
+.quick-settings .quick-toggle.enabled {
+  border-radius: 19px;
+}
+.quick-settings .quick-toggle.enabled .toggle {
+  padding: 12px;
+  background-color: @primary;
+  color: @on_primary;
+  border-radius: 15px;
+}
+.quick-settings .quick-toggle.enabled .toggle-single {
+  padding: 12px;
+  background-color: @primary;
+  color: @on_primary;
+  border-radius: 25px;
+}
+.quick-settings .quick-toggle.enabled .toggle:hover,
+.quick-settings .quick-toggle.enabled .toggle-single:hover {
+  background-color: color-mix(in srgb, @primary 75%, white);
+}
+.quick-settings .quick-toggle.enabled .dropdown-button:active {
+  transition: border-radius 0.05s ease-in;
+  border-radius: 0px 20px 20px 0px;
+}
+.quick-settings .quick-toggle.disabled {
+  border-radius: 30px;
+  background-color: color-mix(in srgb, @surface_container_low 100%, transparent);
+}
+.quick-settings .quick-toggle.disabled .toggle {
+  padding: 12px;
+  background-color: @surface_container_high;
+  color: @on_surface_container_high;
+  border-radius: 50%;
+}
+.quick-settings .quick-toggle.disabled .toggle-single {
+  min-width: 70px;
+  padding: 12px;
+  background-color: color-mix(in srgb, @surface_container_high 100%, transparent);
+  border-radius: 40px;
+}
+.quick-settings .quick-toggle.disabled .toggle:hover,
+.quick-settings .quick-toggle.disabled .toggle-single:hover {
+  background-color: @surface_variant;
+}
+
+.media-frame {
+  border-radius: 25px;
+  border: none;
+}
+
+.media-player {
+  padding: 0px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  min-height: 150px;
+  transition: background-image 0.5s ease-in-out;
+}
+.media-player .play-pause {
+  padding: 10px;
+  border-radius: 15px;
+  background-color: @primary;
+  color: @on_primary;
+}
+.media-player .play-pause:hover {
+  border-radius: 20px;
+  background-color: @primary_container;
+  color: @on_primary_container;
+}
+.media-player .play-pause:active {
+  transition: border-radius 0.05s ease-in;
+  border-radius: 15px;
+}
+.media-player button:hover {
+  background-color: color-mix(in srgb, @surface_container_highest 100%, transparent);
+}
+.media-player .media-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+}
+.media-player .media-title {
+  font-size: 16px;
+  color: white;
+}
+.media-player .cover {
+  background-position: center;
+  background-size: cover;
+  border-radius: 25px;
+  margin: 15px;
+  min-height: 13rem;
+  min-width: 13rem;
+  opacity: 0.9;
+}
+.media-player .media-control-button {
+  background-color: transparent;
+  color: @primary_fixed;
+  padding: 0px;
+}
+
+.dropdown-menu {
+  background-color: color-mix(in srgb, @surface_container_high 100%, transparent);
+  border-radius: 25px;
+  margin-top: 15px;
+}
+.dropdown-menu .dropdown-header {
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.dropdown-menu .dropdown-header label {
+  margin-bottom: 0px;
+  color: @on_surface;
+}
+.dropdown-menu .dropdown-icon {
+  background-color: @primary;
+  color: @on_primary;
+  padding: 10px;
+  border-radius: 50%;
+}
+.dropdown-menu .dropdown-list {
+  background-color: transparent;
+}
+.dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.dropdown-menu .dropdown-footer {
+  background-color: @surface_container_high;
+  color: @on_surface;
+  border-radius: 0px 0px 25px 25px;
+  padding: 15px 25px;
+}
+.dropdown-menu .dropdown-footer:hover {
+  background-color: @surface_container;
+}
+
+.todo {
+  color: @on_background;
+  background-color: color-mix(in srgb, @surface_container 100%, transparent);
+  padding: 15px;
+  border-radius: 25px;
+}
+.todo .todo-list {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: color-mix(in srgb, @surface 100%, transparent);
+}
+.todo .todo-item {
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+.todo .todo-item:hover {
+  background-color: @primary_container;
+  color: @on_primary_container;
+}
+.todo .todo-icon {
+  background-color: @primary;
+  color: @on_primary;
+  padding: 10px;
+  border-radius: 50%;
+}
+.todo .remove-button {
+  padding: 5px 10px;
+  background-color: @surface_container;
+}
+.todo .remove-button:hover {
+  background-color: @tertiary_container;
+  border-radius: 15px;
+}
+
+.power-menu {
+  padding: 15px;
+  border-radius: 40px;
+  background-color: color-mix(in srgb, @background 100%, transparent);
+  border: 1px solid color-mix(in srgb, @outline_variant 100%, transparent);
+}
+.power-menu * {
+  transition: background-color 0.2s ease-in-out, border-radius 0.3s cubic-bezier(0.5, -1, 0.5, 2);
+}
+.power-menu button {
+  background-color: color-mix(in srgb, @surface_container_high 100%, transparent);
+  color: @on_background;
+  padding: 20px;
+}
+.power-menu button:hover {
+  background-color: @primary;
+  color: @on_primary;
+  border-radius: 25px;
+}
+
+.wifi-prompt {
+  min-width: 400px;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: color-mix(in srgb, @surface 100%, transparent);
+  border: 1px solid @outline;
+}
+.wifi-prompt entry {
+  min-width: 200px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: @surface_container_high;
+  color: @on_surface;
+}
+.wifi-prompt .connect-btn {
+  padding: 10px;
+  background-color: @primary_container;
+  color: @on_primary;
+  border-radius: 10px;
+}
+.wifi-prompt .cancel-btn {
+  padding: 10px;
+  border-radius: 10px;
+  color: @error;
+}
+
+.dock {
+  background-color: color-mix(in srgb, @background 100%, transparent);
+  border: 1px solid color-mix(in srgb, @outline_variant 100%, transparent);
+  padding: 5px;
+  border-radius: 25px;
+  min-height: 0;
+}
+.dock .dock-item,
+.dock .launcher-toggle {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px;
+}
+.dock .dock-item {
+  padding: 10px 10px 0px 10px;
+}
+.dock .dock-item:hover,
+.dock .launcher-toggle:hover {
+  background-color: color-mix(in srgb, @surface_container_high 50%, transparent);
+  border-radius: 20px;
+}
+
+.dock-trigger {
+  background-color: rgba(0, 0, 0, 0.01);
+  min-height: 5px;
+  min-width: 100px;
+}
+
+.notification {
+  background-color: color-mix(in srgb, @background 100%, transparent);
+  border: 1px solid color-mix(in srgb, @outline_variant 100%, transparent);
+  padding: 15px;
+  border-radius: 25px;
+}
+.notification .title,
+.notification .body {
+  color: @on_surface;
+}
+.notification .expand,
+.notification .close {
+  padding: 2px;
+}
+.notification .actions {
+  margin-top: 15px;
+}
+
+.bar {
+  background-color: color-mix(in srgb, @background 100%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, @outline_variant 100%, transparent);
+  padding: 2px;
+  border-radius: 0px;
+}
+.bar .window-info {
+  color: @on_background;
+  font-weight: bold;
+}
+.bar button {
+  padding: 2px 15px;
+  background-color: transparent;
+}
+.bar .workspaces {
+  padding: 2px 15px;
+}
+.bar .workspaces button {
+  padding: 0px;
+}
+.bar .workspaces .workspace-indicator {
+  border-radius: 12px;
+  min-height: 10px;
+  min-width: 10px;
+  background-color: @on_background;
+}
+.bar .workspaces .workspace-indicator.focused {
+  min-height: 12px;
+  min-width: 36px;
+}
+
+.datemenu {
+  background-color: color-mix(in srgb, @background 100%, transparent);
+  border: 1px solid color-mix(in srgb, @outline_variant 100%, transparent);
+  padding: 15px;
+  border-radius: 40px;
+}
+.datemenu .day-label {
+  margin-top: 15px;
+  margin-left: 15px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.datemenu .date-label {
+  margin-left: 15px;
+  font-weight: bold;
+  font-size: 2em;
+}
+.datemenu .calendar-container {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 25px;
+}
+.datemenu .calendar-container .calendar-header label {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.datemenu .calendar-container .calendar-header button {
+  background-color: transparent;
+}
+.datemenu .calendar-container .calendar-header button:hover {
+  background-color: @surface_variant;
+}
+.datemenu .calendar-container .calendar {
+  border: none;
+}
+.datemenu .calendar-container .calendar grid label.day-number {
+  margin: 0px;
+  padding: 5px;
+  font-size: 15px;
+}
+.datemenu .calendar-container .calendar grid label.day-number:selected {
+  background-color: transparent;
+  color: @primary;
+  font-weight: bold;
+}
+.datemenu .calendar-container .calendar grid label.day-number.other-month {
+  opacity: 0.3;
+}
+.datemenu .calendar-container .calendar grid label.day-name {
+  color: @on_surface_variant;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.launcher {
+  background-color: color-mix(in srgb, @background 100%, transparent);
+  border: 1px solid color-mix(in srgb, @outline_variant 100%, transparent);
+  padding: 25px;
+  border-radius: 25px;
+  min-width: 600px;
+}
+.launcher .search-field {
+  background-color: @surface_container;
+  border-radius: 10px;
+}
+.launcher entry {
+  background-color: @surface_container;
+}
+.launcher entry image {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.launcher button {
+  border-radius: 10px;
+  background-color: transparent;
+}
+.launcher button:focus,
+.launcher button:hover {
+  background-color: @surface_container_low;
+}
+.launcher .external-search {
+  border-radius: 25px;
+  padding: 10px 20px;
+  background-color: @surface_container_high;
+  color: @on_background;
+}
+.launcher .external-search:hover,
+.launcher .external-search:focus {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: @primary_container;
+  color: @on_primary_container;
+  transition: border-radius 0.15s ease-in;
+}
+
+.segmented-control * {
+  transition: border-radius 0.1s ease-in;
+}
+.segmented-control {
+  background-color: transparent;
+}
+.segmented-control flowboxchild {
+  padding: 0px;
+  border-radius: 5px;
+  margin-right: 3px;
+}
+.segmented-control flowboxchild button {
+  border-radius: 5px;
+}
+.segmented-control flowboxchild:first-child {
+  border-radius: 25px 5px 5px 25px;
+  padding: 0px;
+}
+.segmented-control flowboxchild:first-child button {
+  padding-left: 15px;
+  border-radius: 25px 5px 5px 25px;
+}
+.segmented-control flowboxchild:last-child {
+  border-radius: 5px 25px 25px 5px;
+  margin: 0px;
+}
+.segmented-control flowboxchild:last-child button {
+  padding-right: 15px;
+  border-radius: 5px 25px 25px 5px;
+}
+.segmented-control flowboxchild:first-child,
+.segmented-control flowboxchild:last-child {
+  border-radius: 15px;
+}
+.segmented-control flowboxchild:first-child button.enabled,
+.segmented-control flowboxchild:last-child button.enabled {
+  border-radius: 25px;
+}
+.segmented-control button.enabled {
+  background-color: @primary;
+  border-radius: 25px;
+  color: @on_primary;
+}
+.segmented-control button:hover {
+  background-color: @surface_variant;
+  color: @on_surface_variant;
+}
+.segmented-control button.enabled:hover {
+  background-color: @primary;
+  color: @on_primary;
+}
+
+.settings-window {
+  background-color: color-mix(in srgb, @background 100%, transparent);
+  border: 1px solid color-mix(in srgb, @outline_variant 100%, transparent);
+  padding: 20px;
+  border-radius: 30px;
+}
+.settings-window .icon {
+  background-color: @primary;
+  color: @on_primary;
+  padding: 10px;
+  border-radius: 50%;
+}
+.settings-window .title {
+  color: @on_background;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.settings-window .section-title {
+  color: @on_background;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.settings-window .group-title {
+  color: @on_background;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.settings-window .settings-group {
+  background-color: color-mix(in srgb, @surface_container_low 100%, transparent);
+  padding: 15px;
+  border-radius: 20px;
+}
+.settings-window .setting-row {
+  padding: 10px 0;
+}
+.settings-window .settings-nav {
+  background-color: color-mix(in srgb, @surface_container_high 100%, transparent);
+  padding: 5px;
+  border-radius: 30px;
+}
+.settings-window entry {
+  min-width: 200px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: @surface_container_high;
+  color: @on_surface;
+}
+.settings-window entry:focus {
+  border: 1px solid @primary;
+}
+.settings-window spinbutton {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: @surface_container_high;
+  color: @on_surface;
+}
+.settings-window dropdown {
+  background-color: transparent;
+}
+.settings-window dropdown * {
+  border-radius: 10px;
+}
+.settings-window switch {
+  background-color: @surface_container_high;
+}
+.settings-window switch slider {
+  background-color: @on_surface_variant;
+}
+.settings-window switch:checked {
+  background-color: @primary;
+}
+.settings-window switch:checked slider {
+  background-color: @on_primary;
+}
+.settings-window separator {
+  background-color: @outline_variant;
+  min-height: 1px;
+  margin: 5px 0;
+}
+
+/*# sourceMappingURL=main.css.map */

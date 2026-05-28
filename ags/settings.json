@@ -1,0 +1,68 @@
+{
+  "quick_settings": {
+    "power_options": [
+      {
+        "label": "Shutdown",
+        "icon": "system-shutdown-symbolic",
+        "command": "notify-send 'System' 'Shutting down...'; sleep 1; shutdown -h now"
+      },
+      {
+        "label": "Reboot",
+        "icon": "view-refresh-symbolic",
+        "command": "notify-send 'System' 'Rebooting...'; sleep 1; reboot"
+      },
+      {
+        "label": "Sleep",
+        "icon": "weather-clear-night-symbolic",
+        "command": "hyprctl dispatch exec hyprlock; systemctl suspend"
+      },
+      {
+        "label": "Hibernate",
+        "icon": "drive-harddisk-symbolic",
+        "command": "notify-send 'System' 'Hibernating...'; hyprctl dispatch exec hyprlock; sleep 1; systemctl hibernate"
+      },
+      {
+        "label": "Log Out",
+        "icon": "system-log-out-symbolic",
+        "command": "notify-send 'System' 'Logging out...'; sleep 1; hyprctl dispatch exit"
+      }
+    ],
+    "toggles": [
+      "wifi",
+      "bluetooth",
+      "power_profiles",
+      "do_not_disturb"
+    ],
+    "header": true,
+    "speaker_controls": true,
+    "microphone_controls": true,
+    "quick_toggles": true,
+    "todo_list": true,
+    "media_controls": true
+  },
+  "launcher": {
+    "search_provider": "duckduckgo",
+    "ai_provider": "https://duckduckgo.com/?ia=chat&t=h_&duckai=1&home=1&q=",
+    "modules": [
+      "apps",
+      "web",
+      "ai"
+    ],
+    "result_limit": 7
+  },
+  "theme": {
+    "mode": "dark",
+    "wallpaper": "wallhaven-vpp6d5.jpg",
+    "color_scheme": "scheme-tonal-spot"
+  },
+  "clock": {
+    "format": "%I:%M:%S %p",
+    "font": "Adwaita",
+    "font_size": 300,
+    "font_weight": 700,
+    "anchor": [
+      "bottom",
+      "left"
+    ]
+  }
+}
